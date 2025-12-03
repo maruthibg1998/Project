@@ -3,12 +3,7 @@ pipeline {
 
     stages {
 
-        stage('Clone Project') {
-            steps {
-                git branch: 'main', url: 'https://github.com/maruthibg1998/Project'
-            }
-        }
-
+    
         stage('Clean') {
             steps {
                 sh 'mvn clean'
