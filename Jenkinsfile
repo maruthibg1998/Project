@@ -1,12 +1,16 @@
 pipeline {
     agent any
+    
+    environment {
+        git_branch = 'main'
+        git_url = 'git@github.com:maruthibg1998/Project.git'
+    }
 
     stages {
 
-    
-        stage('Clean') {
+        stage('Clone') {
             steps {
-                sh 'mvn clean'
+                git branch: "${git_branch}", url: "${git_url}"
             }
         }
 
@@ -22,13 +26,7 @@ pipeline {
             }
         }
 
-        stage('Package') {
-            steps {
-                sh 'mvn package'
-            }
-        }
-
-        stage('Build') {
+        stage('Build Project') {
             steps {
                 sh 'mvn clean install'
             }
