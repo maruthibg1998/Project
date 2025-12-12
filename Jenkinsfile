@@ -3,7 +3,7 @@ pipeline {
     
     environment {
         git_branch = 'main'
-        git_url = 'git@github.com:maruthibg1998/Project.git'
+        git_url = 'https://github.com/maruthibg1998/Project.git'
     }
 
     stages {
